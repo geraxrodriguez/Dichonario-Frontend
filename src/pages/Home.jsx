@@ -8,13 +8,12 @@ const Home = () => {
 
     return (
         <main className={styles.main}>
-            Woo hoooo!
             <div className={styles.contentContainer}>
                 {/* <div className="mx-auto text-center"> */}
                 {/* <div className={styles.titleContainer}> */}
                     {/* <h1 className="text-white text-4xl sm:text-5xl md:text-6xl"> */}
                     <h1 className={styles.h1}>
-                        Dichonario
+                        Dichonario, yessir
                     </h1>
                     <h2 className={styles.h2}>
                     A dictionary for latin american colloquialisms.
