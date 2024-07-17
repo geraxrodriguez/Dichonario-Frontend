@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <main className={styles.main}>
-
+            Woo hoooo!
             <div className={styles.contentContainer}>
                 {/* <div className="mx-auto text-center"> */}
                 {/* <div className={styles.titleContainer}> */}
