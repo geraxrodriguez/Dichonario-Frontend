@@ -11,7 +11,7 @@ const SingleDichoPage = () => {
     useEffect(() => {
         const getDicho = async () => {
             try {
-                const res = await axios.get(`http://localhost:2222/dichos/${id}`);
+                const res = await axios.get(`https://dichonario-mern.onrender.com/dichos/${id}`);
                 setDicho(res.data);
             } catch (error) {
                 console.log('Error fetching data', error);
@@ -23,7 +23,7 @@ const SingleDichoPage = () => {
     const submitSuggestions = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:2222/dichos/${id}/suggestions`, { suggestions, })
+            const res = await axios.post(`https://dichonario-mern.onrender.com/dichos/${id}/suggestions`, { suggestions, })
             navigate('/success');
         } catch (error) {
             console.log('Error submitting form', error)

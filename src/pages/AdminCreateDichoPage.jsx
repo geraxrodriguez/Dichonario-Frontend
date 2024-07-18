@@ -27,7 +27,8 @@ const SubmitDichoPage = () => {
         };
         console.log("New Dicho:", newDicho)
         axios
-            .post('http://localhost:2222/admin/create-dicho', newDicho)
+            // .post('http://localhost:2222/admin/create-dicho', newDicho)
+            .post('https://dichonario-mern.onrender.com/admin/create-dicho', newDicho)
             .then(() => {
                 console.log('Dicho submitted successfully.')
                 navigate('/success');

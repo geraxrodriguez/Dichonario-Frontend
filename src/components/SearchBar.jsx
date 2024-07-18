@@ -67,7 +67,8 @@ const SearchBar = () => {
   const surpriseMe = async () => {
     try {
       console.log('surprise me clicked')
-      const res = await axios.get('http://localhost:2222/surprise-me');
+      // const res = await axios.get('http://localhost:2222/surprise-me');
+      const res = await axios.get('https://dichonario-mern.onrender.com/surprise-me');
       const id = res.data
       navigate(`/dichos/${id}`)
     } catch (error) {
