@@ -12,6 +12,7 @@ const SingleDichoPage = () => {
         const getDicho = async () => {
             try {
                 const res = await axios.get(`https://dichonario-mern.onrender.com/dichos/${id}`);
+                // console.log(res.data)
                 setDicho(res.data);
             } catch (error) {
                 console.log('Error fetching data', error);
@@ -46,22 +47,24 @@ const SingleDichoPage = () => {
                             Literal Translation:
                         </h3>
                         <p className="text-lg mb-6">
-                            {dicho.meaning}
+                            {dicho.literalMeaning}
                         </p>
 
                         <h3 className="text-indigo-800 font-bold mb-1">
                             Actually Means:
                         </h3>
                         <p className="text-lg mb-6">
-                            {dicho.meaning}
+                            {dicho.actualMeaning}
                         </p>
 
                         <h3 className="text-indigo-800 font-bold mb-1">
                             Example
                         </h3>
+
                         <p className="text-lg mb-6">
-                            {dicho.example}
+                            {dicho.examples}
                         </p>
+
 
                         <form className="text-lg/6" onSubmit={submitSuggestions}>
                             <label
