@@ -17,7 +17,7 @@ const Navbar = () => {
           
           <div className="flex flex-1 items-center justify-center  md:items-stretch md:justify-start"> {/* flex-1 items grow and shrink to distribute space evenly */}
 
-            <NavLink className="flex items-center mr-2" to="/"> {/* flex-shrink-0 => item will not shrink */}
+            <NavLink className="flex items-center mr-2 md:ml-16" to="/"> {/* flex-shrink-0 => item will not shrink */}
               <span className="hidden md:block text-white text-2xl font-bold"> {/* hidden md:block => hides element until md breakpoint is reached, typically >= 768px */}
                 Dichonario
               </span>
