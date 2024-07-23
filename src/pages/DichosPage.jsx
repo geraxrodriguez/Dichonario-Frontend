@@ -8,7 +8,8 @@ const Dichos = () => {
   useEffect(() => {
     const getDichos = async () => {
       try {
-        const res = await axios.get('http://localhost:2222/dichos');
+        // const res = await axios.get('http://localhost:2222/dichos');
+        const res = await axios.get('https://dichonario-mern.onrender.com/dichos');
         console.log(res.data.dichos);
         setDichos(res.data.dichos);
       } catch (error) {
