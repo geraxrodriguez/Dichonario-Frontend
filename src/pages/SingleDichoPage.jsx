@@ -58,6 +58,13 @@ const SingleDichoPage = () => {
                         </p>
 
                         <h3 className="text-indigo-800 font-bold mb-1">
+                            History and Origins:
+                        </h3>
+                        <p className="text-lg mb-6">
+                            {dicho.history}
+                        </p>
+
+                        <h3 className="text-indigo-800 font-bold mb-1">
                             Example
                         </h3>
 
