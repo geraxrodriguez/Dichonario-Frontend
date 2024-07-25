@@ -12,19 +12,19 @@ const SearchBar = () => {
 
   const fetchData = (input) => {
     fetch('https://dichonario.netlify.app/dichos')
-      .then((response) => response.json())
-      .then((json) => {
-        const dichos = json.dichos;
-        const searchResults = dichos.filter(dicho => {
-          return (
-            input &&                                  // if user has typed in a value
-            dicho &&                                  // if anything in our dichos 
-            dicho.dicho &&                            // if dicho has dicho property
-            dicho.dicho.toLowerCase().includes(input.toLowerCase()) // wouldn't we need to make the value lowercase too?
-          );
-        });
-        setSearchResults(searchResults);
-      })
+      .then((response) => console.log(response.json()))
+      // .then((json) => {
+      //   const dichos = json.dichos;
+      //   const searchResults = dichos.filter(dicho => {
+      //     return (
+      //       input &&                                  // if user has typed in a value
+      //       dicho &&                                  // if anything in our dichos 
+      //       dicho.dicho &&                            // if dicho has dicho property
+      //       dicho.dicho.toLowerCase().includes(input.toLowerCase()) // wouldn't we need to make the value lowercase too?
+      //     );
+      //   });
+      //   setSearchResults(searchResults);
+      // })
   };
 
   // This functions does two things:
