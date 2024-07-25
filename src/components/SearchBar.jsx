@@ -11,7 +11,7 @@ const SearchBar = () => {
   // const [ selectedDicho, setSelectedDicho ] = useState({})
 
   const fetchData = (input) => {
-    fetch('http://localhost:2222/dichos')
+    fetch('http://localhost:2222/dichos/')
       .then((response) => response.json())
       .then((json) => {
         const dichos = json.dichos;
