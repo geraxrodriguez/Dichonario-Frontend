@@ -79,25 +79,28 @@ const SearchBar = () => {
     <form onSubmit={submit} className={styles.searchBar}>
   
       {/* INPUT FIELD */}
-      <input
+      {/* <input
         className="border rounded-lg w-full py-1 px-5 mb-1 text-2xl required"
         placeholder="Search dichos..."
         value={input}
         onChange={(e) => handleChange(e.target.value)}
-      />
+      /> */}
   
       {/* SEARCH RESULTS LIST */}
-      { searchResults && 
+      {/* { searchResults && 
         searchResults.length > 0 && 
         <SearchResultsList searchResults={searchResults} selectSearchResult={selectSearchResult} />
-      }
+      } */}
   
       {/* BUTTONS */}
       <div className="w-full flex space-x-2 justify-center mt-3">
-        <button type="submit" className="bg-indigo-500 text-white rounded-md px-3 py-2">
+        {/* <button type="submit" className="bg-indigo-500 text-white rounded-md px-3 py-2">
           Search
-        </button>
+        </button> */}
 
+        <div className="bg-indigo-500 text-white rounded-md px-3 py-2">
+          <Link to='https://dichonario.netlify.app/dichos'> Browse Dichos </Link>
+        </div>
         <div className="bg-indigo-500 text-white rounded-md px-3 py-2">
           <Link onClick={surpriseMe}> Surprise Me </Link>
         </div>
