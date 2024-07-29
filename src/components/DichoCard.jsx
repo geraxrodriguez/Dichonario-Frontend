@@ -6,10 +6,6 @@ const DichoComponent = ({ dicho }) => {
                     ? dicho.actualMeaning.substring(0, 40) + '...' 
                     : dicho.actualMeaning ;
 
-  dicho.dicho = dicho.dicho.length > 30 
-                    ? dicho.dicho.substring (0, 30) + '...' 
-                    : dicho.dicho ;
-
   return (
     <div className="hover:cursor-pointer bg-white rounded-xl shadow-md relative flex flex-col justify-center">
       <div className="p-4">
