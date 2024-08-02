@@ -5,8 +5,10 @@ import axios from 'axios';
 const SingleDichoPage = () => {
     const [suggestions, setSuggestions] = useState('')
     const [dicho, setDicho] = useState({});
+    const [examples, setExamples] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
+
 
     useEffect(() => {
         const getDicho = async () => {
@@ -14,6 +16,7 @@ const SingleDichoPage = () => {
                 const res = await axios.get(`https://dichonario-mern.onrender.com/dichos/${id}`);
                 // console.log(res.data)
                 setDicho(res.data);
+                setExamples(res.data.examples);
             } catch (error) {
                 console.log('Error fetching data', error);
             }
@@ -63,17 +66,23 @@ const SingleDichoPage = () => {
                         <p className="text-lg mb-6 whitespace-pre-wrap">
                             {dicho.history}
                         </p>
-
+                        
                         <h3 className="text-indigo-800 font-bold mb-1">
                             Example(s)
                         </h3>
 
-                        <p className="text-lg mb-6 whitespace-pre-wrap">
+                        {/* <p className="text-lg mb-6 whitespace-pre-wrap">
                             {dicho.examples}
-                        </p>
+                        </p> */}
+
+                        {examples.map((example, index) => (
+                            <p key={index} className="text-lg mb-3 whitespace-pre-wrap">
+                                {index + 1}. {example}
+                            </p>
+                        ))}
 
 
-                        <form className="text-lg/6" onSubmit={submitSuggestions}>
+                        <form className="text-lg/6 mt-14" onSubmit={submitSuggestions}>
                             <label
                                 htmlFor="suggestions"
                                 className="block text-gray-700"
