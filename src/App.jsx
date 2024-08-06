@@ -9,6 +9,7 @@ import SuccessPage from './pages/SuccessPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import AdminCreateDichoPage from './pages/AdminCreateDichoPage';
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 import './App.css';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/search" element={<SearchResultsPage />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/sign-up" element={<SignUpPage />} />
       <Route path="/admin/create-dicho" element={< AdminCreateDichoPage />} />
     </Routes>
   );

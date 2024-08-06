@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css'
 
-const LoginPage = () => {
+const SignUpPage = () => {
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
-    const handleLogin = async (event) => {
+   const handleSignUp = async (event) => {
         event.preventDefault();
         try {
-            // await axios.post('https://dichonario.netlify.app/login', { username, password })            // console.log('sending axios')
-            const res = await axios.post('http://localhost:2222/auth/login', { username, password });
-            if (res.status === 200) {
-                navigate('/')
-            }
+            await axios.post('http://localhost:2222/auth/sign-up', { username, email, password });
+            alert('Sign-up successful!');
         } catch (error) {
-            alert('Login failed frontend');
+            alert('Sign-up failed!');
         }
     };
 
@@ -27,10 +23,10 @@ const LoginPage = () => {
 
             {/* HEADERS */}
             <h3 className={styles.dichonarioHeader}>Dichonario</h3>
-            <h1 className={styles.signInHeader}>Sign in</h1>
+            <h1 className={styles.signInHeader}>Sign Up</h1>
 
             {/* FORM */}
-            <form className={styles.form} onSubmit={handleLogin}>
+            <form className={styles.form} onSubmit={handleSignUp}>
 
                 {/* USERNAME */}
                 <section className={styles.sections}>
@@ -40,12 +36,28 @@ const LoginPage = () => {
                     <input 
                         className={styles.inputs} 
                         type="text" 
-                        name="username" 
                         id="username" 
+                        name="username" 
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                         required 
                         autoFocus 
+                    />
+                </section>
+
+                {/* EMAIL */}
+                <section className={styles.sections}>
+                    <label className={styles.labels} htmlFor="email">
+                        Email
+                    </label>
+                    <input 
+                        className={styles.inputs} 
+                        type="text" 
+                        id="email" 
+                        name="email" 
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        required 
                     />
                 </section>
 
@@ -56,8 +68,8 @@ const LoginPage = () => {
                     </label>
                     <input 
                         className={styles.inputs} 
-                        name="password" 
                         id="password" 
+                        name="password" 
                         type="password" 
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
@@ -66,14 +78,14 @@ const LoginPage = () => {
                 </section>
 
                 {/* BUTTON */}
-                <button className={styles.signInButton} type="submit">Sign in</button>
+                <button className={styles.signInButton} type="submit">Sign Up</button>
 
             </form>
 
             <hr className={styles.hr} />
-            <p className="help">Don't have an account? <a href="/sign-up">Sign up</a></p>
+            <p className="help">Already have an account? <a href="/login">Login</a></p>
         </section>
     )
 }
 
-export default LoginPage
+export default SignUpPage;

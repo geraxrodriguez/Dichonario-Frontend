@@ -7,12 +7,16 @@
 	border-radius: 8px;
 }
 
+/* .form {
+    margin: 0 0 20px 0;
+} */
+
 .signInButton {
 	display: block;
 	padding: 10px;
 	width: 100%;
 	border-radius: 3px;
-	background: #d83f45;
+	background: rgb(67 56 202);
 	font-size: 14px;
 	font-weight: 700;
 	color: white;
@@ -35,5 +39,37 @@ button:hover {
 	font-size: 24px;
 	font-weight: 300;
 	text-align: center;
-	color: #b83f45;
+	color: rgb(67 56 202);
+}
+
+.sections {
+    margin: 0 0 20px 0;
+    position: relative;
+}
+
+.labels {
+	display: block;
+	margin: 0 0 3px 0;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.inputs {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #d9d9d9;
+	border-radius: 5px;
+}
+
+.inputs:not(:focus):invalid {
+    color: red;
+    outline-color: red;
+}
+
+.hr {
+    border-top: 1px solid #d9d9d9;
+	border-bottom: none;
+    margin: 15px 0;
 }
