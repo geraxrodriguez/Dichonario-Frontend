@@ -16,7 +16,7 @@ const Home = () => {
                         Dichonario
                     </h1>
                     <h2 className={styles.h2}>
-                    A dictionary for latin american colloquialisms.
+                    A dictionary for Latin American colloquialisms.
                     </h2>
                 {/* </div> */}
 
